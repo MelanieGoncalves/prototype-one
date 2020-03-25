@@ -146,89 +146,83 @@ class Home extends Component {
                                 color: "white",
                                 border: "1px solid white",
                                 height: "8%",
-                                fontSize: "120%"
+                                fontSize: "120%",
+                                borderRadius: "5px"
                             }}>FRIENDS</NavLink>
                             <Collapse isOpen={this.state.friendsIsOpen}>
                                 <Card>
-                                    <ListGroup>
-                                        <ListGroupItem>LAST POST</ListGroupItem>
-                                        <ListGroupItem>LAST HOUR</ListGroupItem>
-                                        <ListGroupItem>LAST DAY</ListGroupItem>
-                                        <ListGroupItem>LAST WEEK</ListGroupItem>
-                                    </ListGroup>
+                                    <Button variant="outline-primary" >LAST POST</Button>
+                                    <Button variant="outline-primary">LAST HOUR</Button>
+                                    <Button variant="outline-primary">LAST DAY</Button>
+                                    <Button variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuPosts} style={{
                                 color: "white",
                                 border: "1px solid white",
                                 height: "8%",
-                                fontSize: "120%"
+                                fontSize: "120%",
+                                borderRadius: "5px"
                             }}>POSTS</NavLink>
                             <Collapse isOpen={this.state.postsIsOpen}>
                                 <Card>
-                                    <ListGroup>
-                                        <ListGroupItem>LAST POST</ListGroupItem>
-                                        <ListGroupItem>LAST HOUR</ListGroupItem>
-                                        <ListGroupItem>LAST DAY</ListGroupItem>
-                                        <ListGroupItem>LAST WEEK</ListGroupItem>
-                                    </ListGroup>
+                                    <Button variant="outline-primary">LAST POST</Button>
+                                    <Button variant="outline-primary">LAST HOUR</Button>
+                                    <Button variant="outline-primary">LAST DAY</Button>
+                                    <Button variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuLikes} style={{
                                 color: "white",
                                 border: "1px solid white",
                                 height: "8%",
-                                fontSize: "120%"
+                                fontSize: "120%",
+                                borderRadius: "5px"
                             }}>LIKES</NavLink>
                             <Collapse isOpen={this.state.likesIsOpen}>
                                 <Card>
-                                    <ListGroup>
-                                        <ListGroupItem>LAST POST</ListGroupItem>
-                                        <ListGroupItem>LAST HOUR</ListGroupItem>
-                                        <ListGroupItem>LAST DAY</ListGroupItem>
-                                        <ListGroupItem>LAST WEEK</ListGroupItem>
-                                    </ListGroup>
+                                    <Button variant="outline-primary">LAST POST</Button>
+                                    <Button variant="outline-primary">LAST HOUR</Button>
+                                    <Button variant="outline-primary">LAST DAY</Button>
+                                    <Button variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuComments} style={{
                                 color: "white",
                                 border: "1px solid white",
                                 height: "8%",
-                                fontSize: "120%"
+                                fontSize: "120%",
+                                borderRadius: "5px"
                             }}>COMMENTS</NavLink>
                             <Collapse isOpen={this.state.commentsIsOpen}>
                                 <Card>
-                                    <ListGroup>
-                                        <ListGroupItem>LAST POST</ListGroupItem>
-                                        <ListGroupItem>LAST HOUR</ListGroupItem>
-                                        <ListGroupItem>LAST DAY</ListGroupItem>
-                                        <ListGroupItem>LAST WEEK</ListGroupItem>
-                                    </ListGroup>
+                                    <Button variant="outline-primary">LAST POST</Button>
+                                    <Button variant="outline-primary">LAST HOUR</Button>
+                                    <Button variant="outline-primary">LAST DAY</Button>
+                                    <Button variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuShares} style={{
                                 color: "white",
                                 border: "1px solid white",
                                 height: "8%",
-                                fontSize: "120%"
+                                fontSize: "120%",
+                                borderRadius: "5px"
                             }}>SHARES</NavLink>
                             <Collapse isOpen={this.state.sharesIsOpen}>
                                 <Card>
-                                    <ListGroup>
-                                        <ListGroupItem>LAST POST</ListGroupItem>
-                                        <ListGroupItem>LAST HOUR</ListGroupItem>
-                                        <ListGroupItem>LAST DAY</ListGroupItem>
-                                        <ListGroupItem>LAST WEEK</ListGroupItem>
-                                    </ListGroup>
+                                    <Button variant="outline-primary">LAST POST</Button>
+                                    <Button variant="outline-primary">LAST HOUR</Button>
+                                    <Button variant="outline-primary">LAST DAY</Button>
+                                    <Button variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                         </NavItem>
                     </Nav>
                 </div>
                 <div style={{ padding: "20px", display: "flex", flexDirection: "column" }}>
-                    <h2 style={{ color: "white" }}>Welcome, first-name</h2>
                     <Button onClick={() => this.setState({ addAccountShow: true })} style={{
-                        marginTop: "20px",
+
                         width: "40px"
                     }}><strong>+</strong></Button>
                     <AddAccounts
