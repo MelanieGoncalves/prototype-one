@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import TopNavBar from './components/TopNavBar.js'
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './components/Global.js';
+import { Menu } from './components/Menu';
 
 function App() {
   return (

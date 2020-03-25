@@ -24,7 +24,8 @@ import About from "./About"
 import Landing from "./Landing";
 import Home from './Home';
 import Register from './Register';
-import Login from './Login'
+import Login from './Login';
+import HomeExpanded from './HomeExpanded';
 
 
 
@@ -104,7 +105,9 @@ class TopNavBar extends Component {
                         <Route path="/home">
                             <Home />
                         </Route>
-
+                        <Route path="/homeExpanded">
+                            <HomeExpanded />
+                        </Route>
                         <Route path="/about">
                             <About />
                         </Route>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Button } from 'react-bootstrap';
+import { Nav, Button, Dropdown } from 'react-bootstrap';
 import AddAccounts from './AddAccounts';
 
 class Home extends Component {
@@ -43,7 +43,7 @@ class Home extends Component {
 
         if (a.facebook === true) {
             buttonarray.push(
-                <Nav.Link key="fb-a" style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link key="fb-a" onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
@@ -53,7 +53,7 @@ class Home extends Component {
         }
         if (a.twitter === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
@@ -64,7 +64,7 @@ class Home extends Component {
 
         if (a.linkedin === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
@@ -75,7 +75,7 @@ class Home extends Component {
 
         if (a.instagram === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
@@ -86,6 +86,10 @@ class Home extends Component {
 
 
         return buttonarray;
+    }
+
+    expandMenu() {
+        window.location.href = './homeExpanded';
     }
 
 
