@@ -21,7 +21,8 @@ class Home extends Component {
             postsIsOpen: false,
             likesIsOpen: false,
             commentsIsOpen: false,
-            sharesIsOpen: false
+            sharesIsOpen: false,
+            showGraphPanel: false
         }
 
     }
@@ -124,10 +125,20 @@ class Home extends Component {
         return buttonarray;
     }
 
-    expandMenu() {
-
+    showGraph() {
+        let graphPanel = (
+            <div style={{ height: "100%", padding: "30px" }}>
+                <img src={require('../images/dummygraph.jpg')} />
+            </div>
+        );
+        return graphPanel;
     }
 
+    openPanel() {
+        console.log("Test");
+        this.setState({ graphPanel: this.showGraph(), showGraphPanel: true });
+
+    }
 
 
     render() {
@@ -151,10 +162,10 @@ class Home extends Component {
                             }}>FRIENDS</NavLink>
                             <Collapse isOpen={this.state.friendsIsOpen}>
                                 <Card>
-                                    <Button variant="outline-primary" >LAST POST</Button>
-                                    <Button variant="outline-primary">LAST HOUR</Button>
-                                    <Button variant="outline-primary">LAST DAY</Button>
-                                    <Button variant="outline-primary">LAST WEEK</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary" >LAST POST</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuPosts} style={{
@@ -166,10 +177,10 @@ class Home extends Component {
                             }}>POSTS</NavLink>
                             <Collapse isOpen={this.state.postsIsOpen}>
                                 <Card>
-                                    <Button variant="outline-primary">LAST POST</Button>
-                                    <Button variant="outline-primary">LAST HOUR</Button>
-                                    <Button variant="outline-primary">LAST DAY</Button>
-                                    <Button variant="outline-primary">LAST WEEK</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuLikes} style={{
@@ -181,10 +192,10 @@ class Home extends Component {
                             }}>LIKES</NavLink>
                             <Collapse isOpen={this.state.likesIsOpen}>
                                 <Card>
-                                    <Button variant="outline-primary">LAST POST</Button>
-                                    <Button variant="outline-primary">LAST HOUR</Button>
-                                    <Button variant="outline-primary">LAST DAY</Button>
-                                    <Button variant="outline-primary">LAST WEEK</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuComments} style={{
@@ -196,10 +207,10 @@ class Home extends Component {
                             }}>COMMENTS</NavLink>
                             <Collapse isOpen={this.state.commentsIsOpen}>
                                 <Card>
-                                    <Button variant="outline-primary">LAST POST</Button>
-                                    <Button variant="outline-primary">LAST HOUR</Button>
-                                    <Button variant="outline-primary">LAST DAY</Button>
-                                    <Button variant="outline-primary">LAST WEEK</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                             <NavLink onClick={this.toggleMenuShares} style={{
@@ -211,14 +222,19 @@ class Home extends Component {
                             }}>SHARES</NavLink>
                             <Collapse isOpen={this.state.sharesIsOpen}>
                                 <Card>
-                                    <Button variant="outline-primary">LAST POST</Button>
-                                    <Button variant="outline-primary">LAST HOUR</Button>
-                                    <Button variant="outline-primary">LAST DAY</Button>
-                                    <Button variant="outline-primary">LAST WEEK</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
+                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
                                 </Card>
                             </Collapse>
                         </NavItem>
                     </Nav>
+                </div>
+                <div style={{ height: "100%" }}>
+                    <Collapse style={{ height: "100%" }} isOpen={this.state.showGraphPanel}>
+                        <Card style={{ height: "100%" }}>{this.state.graphPanel}</Card>
+                    </Collapse>
                 </div>
                 <div style={{ padding: "20px", display: "flex", flexDirection: "column" }}>
                     <Button onClick={() => this.setState({ addAccountShow: true })} style={{
