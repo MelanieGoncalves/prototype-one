@@ -127,7 +127,10 @@ class Home extends Component {
 
     showGraph() {
         let graphPanel = (
-            <div style={{ height: "100%", padding: "30px" }}>
+            <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px" }}>
+                <div>
+                    <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="danger"><strong>X</strong></Button>
+                </div>
                 <img src={require('../images/dummygraph.jpg')} />
             </div>
         );
@@ -138,6 +141,10 @@ class Home extends Component {
         console.log("Test");
         this.setState({ graphPanel: this.showGraph(), showGraphPanel: true });
 
+    }
+
+    closePanel() {
+        this.setState({ graphPanel: null, showGraphPanel: false });
     }
 
 
