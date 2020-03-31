@@ -132,6 +132,9 @@ class Home extends Component {
                     <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="danger"><strong>X</strong></Button>
                 </div>
                 <img src={require('../images/dummygraph.jpg')} />
+                <div>
+                    <Button style={{ float: "center", marginTop: "10px" }} variant="success"><strong>SAVE</strong></Button>
+                </div>
             </div>
         );
         return graphPanel;

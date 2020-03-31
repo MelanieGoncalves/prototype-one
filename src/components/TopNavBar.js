@@ -1,33 +1,12 @@
 import React, { Component, Fragment } from 'react';
-//import { Navbar, Nav, NavItem, Collapse, Container } from 'react-bootstrap';
-import {
-    BrowserRouter as Router,
-    Switch, Route,
-    NavLink as RRNavLink,
-    Link
-} from 'react-router-dom';
-import {
-    Collapse,
-    Navbar,
-    Nav,
-    NavItem,
-    Container,
-    NavLink,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    UncontrolledDropdown,
-    NavbarToggler,
-    NavbarBrand
-} from "reactstrap";
+import { BrowserRouter as Router, Switch, Route, NavLink as RRNavLink, Link } from 'react-router-dom';
+import { Collapse, Navbar, Nav, NavItem, Container, NavLink, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown, NavbarToggler, NavbarBrand } from "reactstrap";
 import About from "./About"
 import Landing from "./Landing";
 import Home from './Home';
 import Register from './Register';
 import Login from './Login';
 import HomeExpanded from './HomeExpanded';
-
-
 
 class TopNavBar extends Component {
     constructor(props) {
