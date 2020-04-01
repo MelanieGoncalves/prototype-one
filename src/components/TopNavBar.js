@@ -36,8 +36,8 @@ class TopNavBar extends Component {
         const LOGGEDIN = (
             <Fragment>
                 <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret></DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownToggle nav caret style={{ color: "white" }}></DropdownToggle>
+                    <DropdownMenu right style={{ border: "2px solid rgb(64,82,37)" }}>
                         <DropdownItem href="/home">HOME</DropdownItem>
                         <DropdownItem onClick={this.logout}>LOG OUT</DropdownItem>
                     </DropdownMenu>
@@ -50,14 +50,14 @@ class TopNavBar extends Component {
 
 
                 <NavItem >
-                    <NavLink tag={RRNavLink} exact to="/about">ABOUT</NavLink>
+                    <NavLink tag={RRNavLink} exact to="/about" style={{ color: "white" }}>ABOUT</NavLink>
                 </NavItem>
             </Fragment>
         )
         return (
             <div style={{ height: "100%" }}>
                 <Router>
-                    <Navbar sticky="top" color="dark" dark expand="sm">
+                    <Navbar sticky="top" expand="sm" style={{ backgroundColor: "rgb(64,82,37)", height: "10%" }}>
                         <Container>
                             <NavbarBrand href="/">
                                 <img alt="logo" src={require('../images/logo.png')} style={{
@@ -66,12 +66,15 @@ class TopNavBar extends Component {
                                     className: "d-inlines-block align-top"
                                 }} />{'  '}
                             </NavbarBrand>
-                            <NavItem >
-                                <NavLink tag={RRNavLink} exact to="/">PROTOTYPE.ONE</NavLink>
-                            </NavItem>
+
+                            <NavLink tag={RRNavLink} exact to="/" style={{
+                                color: "white", textShadow: "1px 1px #b3ab12"
+
+                            }}>PROTOTYPE.ONE</NavLink>
+
                             <NavbarToggler onClick={this.toggle} />
-                            <Collapse className="bg-dark" isOpen={this.state.isOpen} navbar>
-                                <Nav className="ml-auto">
+                            <Collapse isOpen={this.state.isOpen} navbar>
+                                <Nav className="ml-auto" >
                                     {this.state.user ? LOGGEDIN : LOGGEDOUT}
                                 </Nav>
                             </Collapse>

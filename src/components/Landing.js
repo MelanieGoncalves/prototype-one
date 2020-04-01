@@ -12,7 +12,8 @@ class Landing extends Component {
                 <Card style={{
                     width: "70%",
                     margin: "50px auto",
-                    backgroundColor: "#363537",
+                    backgroundColor: "rgb(146, 162,61)",
+                    border: "3px solid rgb(64,82,37)"
 
 
                 }}>
@@ -29,20 +30,22 @@ class Landing extends Component {
                                 width: "60%"
                             }}>
                                 <div>
-                                    <p style={{ width: "100%", padding: "20px 20px 0 20px", color: "gray" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    <p style={{ width: "100%", padding: "20px 20px 0 20px", color: "rgb(253,226,153)" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                                     eu fugiat nulla pariatur.</p>
                                 </div>
-                                <Button href="/register" style={{
+                                <Button variant="outline-dark" href="/register" style={{
                                     margin: "30px auto",
-                                    maxWidth: "300px"
-                                }}>REGISTER</Button>
-                                <Button href="/login" style={{
+                                    maxWidth: "300px",
+                                    borderWidth: "2px"
+                                }}><strong>REGISTER</strong></Button>
+                                <Button variant="outline-dark" href="/login" style={{
                                     margin: "30px auto",
-                                    maxWidth: "300px"
-                                }}>LOG IN</Button>
+                                    maxWidth: "300px",
+                                    borderWidth: "2px"
+                                }}><strong>LOG IN</strong></Button>
                             </div>
                         </div>
 

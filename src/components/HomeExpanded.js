@@ -80,45 +80,45 @@ class Home extends Component {
 
         if (a.facebook === true) {
             buttonarray.push(
-                <Nav.Link key="fb-a" style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link key="fb-a" href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
-            buttonarray.push(
-                <Nav.Link key="fb-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/fbgray.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
-            )
+            // buttonarray.push(
+            //     <Nav.Link key="fb-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/fbgray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+            // )
         }
         if (a.twitter === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
-            buttonarray.push(
-                <Nav.Link key="tw-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/twittergray.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
-            )
+            /* buttonarray.push(
+                <Nav.Link key="tw-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/twittergray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+            ) */
         }
 
         if (a.linkedin === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
-            buttonarray.push(
-                <Nav.Link key="li-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedingray.jpg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
-            )
+            // buttonarray.push(
+            //     <Nav.Link key="li-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedingray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+            // )
         }
 
         if (a.instagram === true) {
             buttonarray.push(
-                <Nav.Link style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
+                <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
             )
         }
         else {
-            buttonarray.push(
-                <Nav.Link key="ig-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/instagray.jpeg')} alt=" " style={{ padding: "0 0", width: "116px", border: "2px solid gray" }} /></Nav.Link>
-            )
+            /* buttonarray.push(
+                <Nav.Link key="ig-k" disabled style={{ width: "100%", padding: "0" }}><img src={require('../images/instagray.jpeg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+            ) */
         }
 
 
@@ -127,13 +127,13 @@ class Home extends Component {
 
     showGraph() {
         let graphPanel = (
-            <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px" }}>
+            <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px", backgroundColor: "rgb(255,240,207)" }}>
                 <div>
                     <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="danger"><strong>X</strong></Button>
                 </div>
                 <img src={require('../images/dummygraph.jpg')} />
                 <div>
-                    <Button style={{ float: "center", marginTop: "10px" }} variant="success"><strong>SAVE</strong></Button>
+                    <Button style={{ float: "center", marginTop: "10px", borderWidth: "2px" }} variant="outline-success"><strong>SAVE</strong></Button>
                 </div>
             </div>
         );
@@ -154,107 +154,131 @@ class Home extends Component {
     render() {
         let addAccountClose = () => this.setState({ addAccountShow: false });
         return (
-            <div style={{ display: "flex", height: "100%" }}>
-                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" variant="pills" style={{ width: "120px", height: "100%", backgroundColor: "darkblue" }}>
+            <div style={{ display: "flex", height: "90%" }}>
+                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" variant="pills" style={{ width: "100px", height: "100%", backgroundColor: "#4F600D" }}>
 
                     <div>{this.state.buttons}</div>
 
                 </Nav>
-                <div style={{ width: "15%", minWidth: "150px", backgroundColor: "gray" }}>
-                    <Nav style={{ width: "100%", height: "100%" }}>
-                        <NavItem style={{ width: "100%", height: "100%" }}>
-                            <NavLink onClick={this.toggleMenuFriends} style={{
-                                color: "white",
-                                border: "1px solid white",
-                                height: "8%",
-                                fontSize: "120%",
-                                borderRadius: "5px"
-                            }}>FRIENDS</NavLink>
-                            <Collapse isOpen={this.state.friendsIsOpen}>
-                                <Card>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary" >LAST POST</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
-                                </Card>
-                            </Collapse>
-                            <NavLink onClick={this.toggleMenuPosts} style={{
-                                color: "white",
-                                border: "1px solid white",
-                                height: "8%",
-                                fontSize: "120%",
-                                borderRadius: "5px"
-                            }}>POSTS</NavLink>
-                            <Collapse isOpen={this.state.postsIsOpen}>
-                                <Card>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
-                                </Card>
-                            </Collapse>
-                            <NavLink onClick={this.toggleMenuLikes} style={{
-                                color: "white",
-                                border: "1px solid white",
-                                height: "8%",
-                                fontSize: "120%",
-                                borderRadius: "5px"
-                            }}>LIKES</NavLink>
-                            <Collapse isOpen={this.state.likesIsOpen}>
-                                <Card>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
-                                </Card>
-                            </Collapse>
-                            <NavLink onClick={this.toggleMenuComments} style={{
-                                color: "white",
-                                border: "1px solid white",
-                                height: "8%",
-                                fontSize: "120%",
-                                borderRadius: "5px"
-                            }}>COMMENTS</NavLink>
-                            <Collapse isOpen={this.state.commentsIsOpen}>
-                                <Card>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
-                                </Card>
-                            </Collapse>
-                            <NavLink onClick={this.toggleMenuShares} style={{
-                                color: "white",
-                                border: "1px solid white",
-                                height: "8%",
-                                fontSize: "120%",
-                                borderRadius: "5px"
-                            }}>SHARES</NavLink>
-                            <Collapse isOpen={this.state.sharesIsOpen}>
-                                <Card>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST POST</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST HOUR</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST DAY</Button>
-                                    <Button onClick={() => this.openPanel()} variant="outline-primary">LAST WEEK</Button>
-                                </Card>
-                            </Collapse>
-                        </NavItem>
-                    </Nav>
-                </div>
-                <div style={{ height: "100%" }}>
-                    <Collapse style={{ height: "100%" }} isOpen={this.state.showGraphPanel}>
-                        <Card style={{ height: "100%" }}>{this.state.graphPanel}</Card>
-                    </Collapse>
-                </div>
-                <div style={{ padding: "20px", display: "flex", flexDirection: "column" }}>
-                    <Button onClick={() => this.setState({ addAccountShow: true })} style={{
+                <div style={{
+                    display: "flex",
+                    backgroundImage: "url(https://cdn.dribbble.com/users/45541/screenshots/5929137/attachments/1275287/matcha-sneak-dribbble.jpg)",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "cover",
+                    backgroundAttachment: "fixed",
+                    backgroundSize: "100%",
+                    overflow: "auto",
+                    width: "100%", height: "100%"
+                }}>
+                    <div style={{ width: "15%", minWidth: "150px", backgroundColor: "rgb(209,209,38)", height: "100%" }}>
+                        <Nav style={{ width: "100%", height: "100%" }}>
+                            <NavItem style={{ width: "100%", height: "100%" }}>
+                                <NavLink onClick={this.toggleMenuFriends} style={{
+                                    color: "white",
+                                    border: "1px solid white",
+                                    height: "8%",
+                                    fontSize: "120%",
+                                    borderRadius: "5px",
+                                    textShadow: "2px 2px #b3ab12"
+                                }}>FRIENDS</NavLink>
+                                <Collapse isOpen={this.state.friendsIsOpen}>
+                                    <Card>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark" >LAST POST</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST HOUR</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST DAY</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST WEEK</Button>
+                                    </Card>
+                                </Collapse>
+                                <NavLink onClick={this.toggleMenuPosts} style={{
+                                    color: "white",
+                                    border: "1px solid white",
+                                    height: "8%",
+                                    fontSize: "120%",
+                                    borderRadius: "5px",
+                                    textShadow: "2px 2px #b3ab12"
+                                }}>POSTS</NavLink>
+                                <Collapse isOpen={this.state.postsIsOpen}>
+                                    <Card>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST POST</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST HOUR</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST DAY</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST WEEK</Button>
+                                    </Card>
+                                </Collapse>
+                                <NavLink onClick={this.toggleMenuLikes} style={{
+                                    color: "white",
+                                    border: "1px solid white",
+                                    height: "8%",
+                                    fontSize: "120%",
+                                    borderRadius: "5px",
+                                    textShadow: "2px 2px #b3ab12"
+                                }}>LIKES</NavLink>
+                                <Collapse isOpen={this.state.likesIsOpen}>
+                                    <Card>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST POST</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST HOUR</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST DAY</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST WEEK</Button>
+                                    </Card>
+                                </Collapse>
+                                <NavLink onClick={this.toggleMenuComments} style={{
+                                    color: "white",
+                                    border: "1px solid white",
+                                    height: "8%",
+                                    fontSize: "120%",
+                                    borderRadius: "5px",
+                                    textShadow: "2px 2px #b3ab12"
+                                }}>COMMENTS</NavLink>
+                                <Collapse isOpen={this.state.commentsIsOpen}>
+                                    <Card>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST POST</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST HOUR</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST DAY</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST WEEK</Button>
+                                    </Card>
+                                </Collapse>
+                                <NavLink onClick={this.toggleMenuShares} style={{
+                                    color: "white",
+                                    border: "1px solid white",
+                                    height: "8%",
+                                    fontSize: "120%",
+                                    borderRadius: "5px",
+                                    textShadow: "2px 2px #b3ab12"
+                                }}>SHARES</NavLink>
+                                <Collapse isOpen={this.state.sharesIsOpen}>
+                                    <Card>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST POST</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST HOUR</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST DAY</Button>
+                                        <Button onClick={() => this.openPanel()} variant="outline-dark">LAST WEEK</Button>
+                                    </Card>
+                                </Collapse>
+                            </NavItem>
+                        </Nav>
+                    </div>
 
-                        width: "40px"
-                    }}><strong>+</strong></Button>
-                    <AddAccounts
-                        show={this.state.addAccountShow}
-                        onHide={addAccountClose}
-                        handler={this.handler} />
+                    <div style={{ height: "100%" }}>
+                        <Collapse style={{ height: "100%" }} isOpen={this.state.showGraphPanel}>
+                            <Card style={{ height: "100%" }}>{this.state.graphPanel}</Card>
+                        </Collapse>
+                    </div>
+                    <div style={{ padding: "20px", display: "flex", flexDirection: "column" }}>
+                        <Button variant="outline-dark" onClick={() => this.setState({ addAccountShow: true })} style={{
+                            marginTop: "20px",
+                            width: "80px",
+                            height: "80px",
+                            backgroundColor: "rgb(255,240,207)",
+                            boxShadow: "8px 8px 50px #000",
+                            borderWidth: "2px",
+                            fontSize: "3em",
+                            padding: "0",
+                            textShadow: "2px 2px #b3ab12"
+                        }}><strong>+</strong></Button>
+                        <AddAccounts
+                            show={this.state.addAccountShow}
+                            onHide={addAccountClose}
+                            handler={this.handler} />
+                    </div>
                 </div>
             </div>
         )

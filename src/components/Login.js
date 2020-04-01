@@ -28,7 +28,8 @@ class Login extends Component {
                 <Card style={{
                     width: "50%",
                     margin: "20px auto 0 auto",
-                    backgroundColor: "gray"
+                    backgroundColor: "rgb(146, 162,61)",
+                    border: "3px solid rgb(64,82,37)"
 
                 }}>
 
@@ -38,20 +39,20 @@ class Login extends Component {
 
 
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Label style={{ float: "left", margin: "0 30px 0 50px" }}>Email address</Form.Label>
+                                <Form.Control size="sm" type="email" placeholder="Enter email" style={{ width: "300px" }} />
 
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Label style={{ float: "left", margin: "0 30px 0 80.59px" }}>Password</Form.Label>
+                                <Form.Control size="sm" type="password" placeholder="Password" style={{ width: "300px" }} />
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit" onClick={this.login} href="/home">
-                                LOG IN
-  </Button>
+                            <Button variant="outline-dark" type="submit" onClick={this.login} href="/home" style={{ borderWidth: "2px" }}>
+                                <strong>LOG IN</strong>
+                            </Button>
 
                         </Form>
 
