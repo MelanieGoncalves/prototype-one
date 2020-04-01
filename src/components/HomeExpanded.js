@@ -204,7 +204,7 @@ class Home extends Component {
 
     showGraph() {
         let graphPanel = (
-            <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px", backgroundColor: "rgb(255,240,207)" }}>
+            <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px", backgroundColor: "rgb(250,242,221)" }}>
                 <div>
                     <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="outline-danger"><strong>X</strong></Button>
                 </div>
@@ -371,7 +371,7 @@ class Home extends Component {
                             marginTop: "20px",
                             width: "80px",
                             height: "80px",
-                            backgroundColor: "rgb(255,240,207)",
+                            backgroundColor: "rgb(250,242,221)",
                             boxShadow: "8px 8px 50px #000",
                             borderWidth: "2px",
                             fontSize: "3em",
