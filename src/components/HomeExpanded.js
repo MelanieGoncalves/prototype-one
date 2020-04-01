@@ -35,9 +35,9 @@ class Home extends Component {
         let a = await JSON.parse(localStorage.getItem("accounts"));
         let b = await this.showButtons(a);
         let g = [];
-        if (JSON.parse(localStorage.getItem('graphs')).graphs != null) {
+        /* if (JSON.parse(localStorage.getItem('graphs')).graphs != null) {
             g = await JSON.parse(localStorage.getItem('graphs')).graphs;
-        }
+        } */
         await this.setState({
             user: u,
             accounts: a,
