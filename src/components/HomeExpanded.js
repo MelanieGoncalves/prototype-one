@@ -241,7 +241,7 @@ class Home extends Component {
                     overflow: "auto",
                     width: "100%", height: "100%"
                 }}>
-                    <div style={{ width: "15%", minWidth: "150px", backgroundColor: "rgb(209,209,38)", height: "100%" }}>
+                    <div style={{ width: "15%", minWidth: "150px", backgroundColor: "rgb(211,209,135)", height: "100%" }}>
                         <Nav style={{ width: "100%", height: "100%" }}>
                             <div style={{ float: "center", width: "100%" }}>
                                 <p style={{
