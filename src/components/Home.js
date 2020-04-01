@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Button, Dropdown } from 'react-bootstrap';
+import { Nav, Button, Dropdown, Alert } from 'react-bootstrap';
 import { Tooltip } from 'reactstrap';
 import AddAccounts from './AddAccounts';
 import Background from '../images/bg.jpg';
@@ -17,7 +17,8 @@ class Home extends Component {
                 linkedin: false,
                 instagram: false
             },
-            buttonarray: []
+            buttonarray: [],
+            tip: false
         }
         this.handleInput = this.handleInput.bind(this);
     }
@@ -34,7 +35,14 @@ class Home extends Component {
         });
         await this.setState({ buttons: b });
 
+        if (a.facebook == false && a.twitter == false && a.linkedin == false && a.instagram == false) {
+            this.setState({ tip: true });
+        }
+
     }
+
+
+
 
     toggle = () => {
         this.setState({
@@ -47,7 +55,13 @@ class Home extends Component {
 
         if (a.facebook === true) {
             buttonarray.push(
-                <Nav.Link key="fb-a" onClick={(e) => this.handleInput(e, "facebook")} style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link key="fb-a" onClick={(e) => this.handleInput(e, "facebook")} style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" "
+                    style={{
+                        padding: "0 0",
+                        width: "90px",
+                        border: "2px solid rgb(64,82,37)",
+                        borderRadius: "20px"
+                    }} /></Nav.Link>
             )
         }
         else {
@@ -57,7 +71,13 @@ class Home extends Component {
         }
         if (a.twitter === true) {
             buttonarray.push(
-                <Nav.Link onClick={(e) => this.handleInput(e, "twitter")} style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "twitter")} style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" "
+                    style={{
+                        padding: "0 0",
+                        width: "90px",
+                        border: "2px solid rgb(64,82,37)",
+                        borderRadius: "20px"
+                    }} /></Nav.Link>
             )
         }
         else {
@@ -68,7 +88,13 @@ class Home extends Component {
 
         if (a.linkedin === true) {
             buttonarray.push(
-                <Nav.Link onClick={(e) => this.handleInput(e, "linkedin")} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "linkedin")} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" "
+                    style={{
+                        padding: "0 0",
+                        width: "90px",
+                        border: "2px solid rgb(64,82,37)",
+                        borderRadius: "20px"
+                    }} /></Nav.Link>
             )
         }
         else {
@@ -79,7 +105,13 @@ class Home extends Component {
 
         if (a.instagram === true) {
             buttonarray.push(
-                <Nav.Link onClick={(e) => this.handleInput(e, "instagram")} style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "instagram")} style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" "
+                    style={{
+                        padding: "0 0",
+                        width: "90px",
+                        border: "2px solid rgb(64,82,37)",
+                        borderRadius: "20px"
+                    }} /></Nav.Link>
             )
         }
         else {
@@ -118,8 +150,8 @@ class Home extends Component {
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "cover",
                     backgroundAttachment: "fixed",
-                    backgroundSize: "100%",
                     backgroundBlendMode: "lighten",
+                    backgroundSize: "100%",
                     overflow: "auto",
                     width: "100%"
                 }}>
@@ -127,17 +159,18 @@ class Home extends Component {
                         <h1 style={{ color: "black", fontFamily: "Calibri", textShadow: "2px 2px #b3ab12", float: "left" }}>WELCOME, FIRST-NAME</h1>
 
                     </div>
+                    <Alert variant="dark" show={this.state.tip} style={{ width: "350px", height: "40px", padding: "5px" }}>CLICK THE BUTTON TO ADD AN ACCOUNT</Alert>
                     <Button variant="outline-dark" onClick={() => this.setState({ addAccountShow: true })} style={{
-                        marginTop: "20px",
+
                         width: "80px",
                         height: "80px",
                         backgroundColor: "rgb(255,240,207)",
                         boxShadow: "8px 8px 50px #000",
                         borderWidth: "2px",
-                        fontSize: "3em",
+                        fontSize: "xxx-large",
                         padding: "0",
-                        textShadow: "2px 2px #b3ab12"
-                    }}><strong>+</strong></Button>
+                        textShadow: "1.5px 1.5px #b3ab12"
+                    }}><div ><strong >+</strong></div></Button>
 
                     <AddAccounts
                         show={this.state.addAccountShow}

@@ -64,7 +64,7 @@ class AddAccounts extends Component {
                 <Modal
 
                     {...this.props}
-                    size="lg"
+
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
 
@@ -77,6 +77,9 @@ class AddAccounts extends Component {
                     <Modal.Body style={{ backgroundColor: "rgb(174,201,135)", border: "none" }}>
                         <h4>Centered Modal</h4>
                         <Form style={{ display: "flex" }}>
+
+
+
                             <div style={{ display: "flex", flexDirection: "column" }}>
                                 <Button variant="outline-dark" style={{ backgroundColor: "transparent", border: "none", padding: "0", borderRadius: "10px" }} onClick={this.addFB} ><img src={require('../images/fblogo.jpg')} alt=" " style={{ height: "100px", borderRadius: "25px" }} /></Button>
                                 <Form.Label style={{ color: "rgb(174,201,135)", marginTop: "15px", borderRadius: "5px" }} id="fblabel" >Facebook Added</Form.Label>
@@ -93,6 +96,7 @@ class AddAccounts extends Component {
                                 <Button variant="outline-dark" style={{ backgroundColor: "transparent", border: "none", padding: "0" }} onClick={this.addIG} ><img src={require('../images/insta.jpeg')} alt=" " style={{ height: "100px", borderRadius: "25px" }} /></Button>
                                 <Form.Label style={{ color: "rgb(174,201,135)", marginTop: "15px", borderRadius: "5px" }} id="iglabel" >Instagram Added</Form.Label>
                             </div>
+
                         </Form>
                     </Modal.Body>
                     <Modal.Footer style={{ backgroundColor: "rgb(146, 160, 62)", border: "none" }}>

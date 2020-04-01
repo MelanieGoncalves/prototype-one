@@ -83,12 +83,24 @@ class Home extends Component {
         if (a.facebook === true) {
             if (localStorage.getItem('selected') == 'facebook') {
                 buttonarray.push(
-                    <Nav.Link key="fb-a" href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link key="fb-a" href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
             else {
                 buttonarray.push(
-                    <Nav.Link key="fb-k" onClick={(e) => this.handleInput(e, "facebook")} style={{ width: "100%", padding: "0" }}><img src={require('../images/fbgray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link key="fb-k" onClick={(e) => this.handleInput(e, "facebook")} style={{ width: "100%", padding: "0" }}><img src={require('../images/fbgray.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
 
@@ -97,12 +109,24 @@ class Home extends Component {
         if (a.twitter === true) {
             if (localStorage.getItem('selected') == 'twitter') {
                 buttonarray.push(
-                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
             else {
                 buttonarray.push(
-                    <Nav.Link key="tw-k" onClick={(e) => this.handleInput(e, "twitter")} style={{ width: "100%", padding: "0" }}><img src={require('../images/twittergray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link key="tw-k" onClick={(e) => this.handleInput(e, "twitter")} style={{ width: "100%", padding: "0" }}><img src={require('../images/twittergray.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
         }
@@ -111,12 +135,24 @@ class Home extends Component {
         if (a.linkedin === true) {
             if (localStorage.getItem('selected') == 'linkedin') {
                 buttonarray.push(
-                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
             else {
                 buttonarray.push(
-                    <Nav.Link key="li-k" onClick={(e) => this.handleInput(e, "linkedin")} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedingray.jpg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link key="li-k" onClick={(e) => this.handleInput(e, "linkedin")} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedingray.jpg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
         }
@@ -125,12 +161,24 @@ class Home extends Component {
         if (a.instagram === true) {
             if (localStorage.getItem('selected') == 'instagram') {
                 buttonarray.push(
-                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link href="/home" style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
             else {
                 buttonarray.push(
-                    <Nav.Link key="ig-k" onClick={(e) => this.handleInput(e, "instagram")} style={{ width: "100%", padding: "0" }}><img src={require('../images/instagray.jpeg')} alt=" " style={{ padding: "0 0", width: "96px", border: "2px solid gray" }} /></Nav.Link>
+                    <Nav.Link key="ig-k" onClick={(e) => this.handleInput(e, "instagram")} style={{ width: "100%", padding: "0" }}><img src={require('../images/instagray.jpeg')} alt=" "
+                        style={{
+                            padding: "0 0",
+                            width: "90px",
+                            border: "2px solid rgb(64,82,37)",
+                            borderRadius: "20px"
+                        }} /></Nav.Link>
                 )
             }
         }
@@ -177,7 +225,7 @@ class Home extends Component {
         let addAccountClose = () => this.setState({ addAccountShow: false });
         return (
             <div style={{ display: "flex", height: "90%" }}>
-                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" variant="pills" style={{ width: "100px", height: "100%", backgroundColor: "#4F600D" }}>
+                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" style={{ width: "100px", height: "100%", backgroundColor: "#4F600D" }}>
 
                     <div>{this.state.buttons}</div>
 
@@ -201,7 +249,10 @@ class Home extends Component {
                                     fontFamily: "Calibri",
                                     fontSize: "x-large",
                                     color: "rgb(64,82,37)",
-                                    border: "2px solid rgb(64,82,37)", padding: "20px", margin: "0"
+                                    border: "2px solid rgb(64,82,37)",
+                                    padding: "20px",
+                                    margin: "0",
+                                    borderTop: "none"
                                 }}><strong>{this.state.selected}</strong></p>
                             </div>
 
