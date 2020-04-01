@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Button, NavItem, NavLink, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Collapse, Card, CardBody } from 'reactstrap';
 import AddAccounts from './AddAccounts';
+import Background from '../images/bgfade.jpg';
 
 class Home extends Component {
     constructor(props) {
@@ -225,14 +226,14 @@ class Home extends Component {
         let addAccountClose = () => this.setState({ addAccountShow: false });
         return (
             <div style={{ display: "flex", height: "90%" }}>
-                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" style={{ width: "100px", height: "100%", backgroundColor: "#4F600D" }}>
+                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" style={{ width: "100px", height: "100%", backgroundColor: "rgb(119,126,82)" }}>
 
                     <div>{this.state.buttons}</div>
 
                 </Nav>
                 <div style={{
                     display: "flex",
-                    backgroundImage: "url(https://cdn.dribbble.com/users/45541/screenshots/5929137/attachments/1275287/matcha-sneak-dribbble.jpg)",
+                    backgroundImage: `url(${Background})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "cover",
                     backgroundAttachment: "fixed",

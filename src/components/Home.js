@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Button, Dropdown, Alert } from 'react-bootstrap';
 import { Tooltip } from 'reactstrap';
 import AddAccounts from './AddAccounts';
-import Background from '../images/bg.jpg';
+import Background from '../images/bgfade.jpg';
 
 class Home extends Component {
     constructor(props) {
@@ -18,7 +18,8 @@ class Home extends Component {
                 instagram: false
             },
             buttonarray: [],
-            tip: false
+            tip: false,
+            background: "../images/bg.jpg"
         }
         this.handleInput = this.handleInput.bind(this);
     }
@@ -139,14 +140,14 @@ class Home extends Component {
                 display: "flex",
                 height: "90%"
             }}>
-                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" variant="pills" style={{ width: "100px", height: "100%", backgroundColor: "#4F600D" }}>
+                <Nav defaultActiveKey="/home" sticky="left" className="flex-column" variant="pills" style={{ width: "100px", height: "100%", backgroundColor: "rgb(119,126,82)" }}>
 
                     <div>{this.state.buttons}</div>
 
                 </Nav>
                 <div style={{
                     padding: "20px", display: "flex", flexDirection: "column",
-                    backgroundImage: "url(https://cdn.dribbble.com/users/45541/screenshots/5929137/attachments/1275287/matcha-sneak-dribbble.jpg)",
+                    backgroundImage: `url(${Background})`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "cover",
                     backgroundAttachment: "fixed",
@@ -177,7 +178,7 @@ class Home extends Component {
                         onHide={addAccountClose}
                         handler={this.handler} />
                 </div>
-            </div>
+            </div >
         )
     }
 }
