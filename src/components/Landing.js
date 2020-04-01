@@ -12,7 +12,7 @@ class Landing extends Component {
                 <Card style={{
                     width: "70%",
                     margin: "50px auto",
-                    backgroundColor: "rgb(146, 162,61)",
+                    backgroundColor: "rgb(119,126,82)",
                     border: "3px solid rgb(64,82,37)"
 
 

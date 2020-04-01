@@ -12,7 +12,7 @@ class Register extends Component {
                 <Card style={{
                     width: "50%",
                     margin: "20px auto 0 auto",
-                    backgroundColor: "rgb(146, 162,61)",
+                    backgroundColor: "rgb(119,126,82)",
                     border: "3px solid rgb(64,82,37)"
 
                 }}>
