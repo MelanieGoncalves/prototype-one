@@ -24,6 +24,7 @@ class Home extends Component {
             commentsIsOpen: false,
             sharesIsOpen: false,
             showGraphPanel: false,
+            graphs: []
 
         }
 
@@ -33,10 +34,15 @@ class Home extends Component {
         let u = await JSON.parse(localStorage.getItem("user"));
         let a = await JSON.parse(localStorage.getItem("accounts"));
         let b = await this.showButtons(a);
+        let g = [];
+        if (JSON.parse(localStorage.getItem('graphs')).graphs != null) {
+            g = await JSON.parse(localStorage.getItem('graphs')).graphs;
+        }
         await this.setState({
             user: u,
             accounts: a,
-            selected: localStorage.getItem('selected')
+            selected: localStorage.getItem('selected'),
+            // graphs: g
         });
         await this.setState({ buttons: b });
 
@@ -200,11 +206,11 @@ class Home extends Component {
         let graphPanel = (
             <div style={{ height: "100%", padding: "30px", display: "flex", flexDirection: "column", padding: "10px", backgroundColor: "rgb(255,240,207)" }}>
                 <div>
-                    <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="danger"><strong>X</strong></Button>
+                    <Button onClick={() => { this.closePanel() }} style={{ width: "40px", height: "40px", float: "right", marginBottom: "10px" }} variant="outline-danger"><strong>X</strong></Button>
                 </div>
                 <img src={require('../images/dummygraph.jpg')} />
                 <div>
-                    <Button style={{ float: "center", marginTop: "10px", borderWidth: "2px" }} variant="outline-success"><strong>SAVE</strong></Button>
+                    <Button onClick={() => { this.saveGraph() }} style={{ float: "center", marginTop: "10px", borderWidth: "2px" }} variant="outline-dark"><strong>SAVE</strong></Button>
                 </div>
             </div>
         );
@@ -219,6 +225,19 @@ class Home extends Component {
 
     closePanel() {
         this.setState({ graphPanel: null, showGraphPanel: false });
+    }
+
+    saveGraph() {
+        let graphsObj = {
+            graphs: this.state.graphs
+        };
+        graphsObj.graphs.push(
+            <div style={{ padding: "10px" }}>
+                <img src={require('../images/dummygraph.jpg')} />
+            </div>
+        )
+        this.setState({ graphs: graphsObj.graphs });
+        localStorage.setItem('graphs', JSON.stringify(graphsObj));
     }
 
 
@@ -363,6 +382,11 @@ class Home extends Component {
                             show={this.state.addAccountShow}
                             onHide={addAccountClose}
                             handler={this.handler} />
+                    </div>
+                    <div style={{
+
+                    }}>
+                        {this.state.graphs}
                     </div>
                 </div>
             </div >
