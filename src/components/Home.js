@@ -19,7 +19,7 @@ class Home extends Component {
             },
             buttonarray: []
         }
-
+        this.handleInput = this.handleInput.bind(this);
     }
 
 
@@ -47,7 +47,7 @@ class Home extends Component {
 
         if (a.facebook === true) {
             buttonarray.push(
-                <Nav.Link key="fb-a" onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link key="fb-a" onClick={(e) => this.handleInput(e, "facebook")} style={{ width: "100%", padding: "0" }}><img src={require('../images/fblogo.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
             )
         }
         else {
@@ -57,7 +57,7 @@ class Home extends Component {
         }
         if (a.twitter === true) {
             buttonarray.push(
-                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "twitter")} style={{ width: "100%", padding: "0" }}><img src={require('../images/twitter.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
             )
         }
         else {
@@ -68,7 +68,7 @@ class Home extends Component {
 
         if (a.linkedin === true) {
             buttonarray.push(
-                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "linkedin")} style={{ width: "100%", padding: "0" }}><img src={require('../images/linkedin.jpg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
             )
         }
         else {
@@ -79,7 +79,7 @@ class Home extends Component {
 
         if (a.instagram === true) {
             buttonarray.push(
-                <Nav.Link onClick={this.expandMenu} style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
+                <Nav.Link onClick={(e) => this.handleInput(e, "instagram")} style={{ width: "100%", padding: "0" }}><img src={require('../images/insta.jpeg')} alt=" " style={{ padding: "0 0", width: "90px", border: "2px solid #4F600D" }} /></Nav.Link>
             )
         }
         else {
@@ -92,7 +92,9 @@ class Home extends Component {
         return buttonarray;
     }
 
-    expandMenu() {
+    handleInput(e, value) {
+        let selected = value;
+        localStorage.setItem('selected', selected);
         window.location.href = './homeExpanded';
     }
 

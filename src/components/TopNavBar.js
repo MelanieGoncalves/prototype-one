@@ -68,7 +68,8 @@ class TopNavBar extends Component {
                             </NavbarBrand>
 
                             <NavLink tag={RRNavLink} exact to="/" style={{
-                                color: "white", textShadow: "1px 1px #b3ab12"
+                                color: "white", textShadow: "1.5px 1.5px #b3ab12",
+                                fontSize: "large"
 
                             }}>PROTOTYPE.ONE</NavLink>
 
